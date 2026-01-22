@@ -16,7 +16,7 @@ Custom Caddy container image with plugins for homelab reverse proxy.
 Pull the image:
 
 ```bash
-podman pull ghcr.io/OWNER/caddy-homelab:latest
+podman pull ghcr.io/abyrne55/caddy-homelab:main
 ```
 
 Run with a Caddyfile:
@@ -27,7 +27,7 @@ podman run -d \
   -v /path/to/Caddyfile:/etc/caddy/Caddyfile:ro \
   -v caddy_data:/data \
   -v caddy_config:/config \
-  ghcr.io/OWNER/caddy-homelab:latest
+  ghcr.io/abyrne55/caddy-homelab:main
 ```
 
 ## Base Images
@@ -47,4 +47,4 @@ podman build -t caddy-homelab:latest -f Containerfile .
 
 ## CI/CD
 
-On push to `main`, GitHub Actions builds multi-arch images (amd64, arm64) and pushes to GHCR.
+On push to `main`, GitHub Actions builds arm64 images and pushes to GHCR.
