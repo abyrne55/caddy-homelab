@@ -1,7 +1,8 @@
 # Custom Caddy build with homelab plugins
-# Built using project-hummingbird base images
+# Builder: official caddy builder (has git)
+# Runtime: hummingbird caddy base (just replace binary)
 
-FROM quay.io/hummingbird/xcaddy AS builder
+FROM caddy:2-builder AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare \
@@ -9,10 +10,6 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer \
     --with github.com/porech/caddy-maxmind-geolocation
 
-FROM quay.io/hummingbird/core-runtime:latest
+FROM quay.io/hummingbird/caddy:2
 
-COPY --from=builder /caddy/caddy /usr/bin/caddy
-
-USER 65532
-ENTRYPOINT ["/usr/bin/caddy"]
-CMD ["run", "--config", "/etc/caddy/Caddyfile"]
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy
