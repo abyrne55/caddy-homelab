@@ -1,0 +1,12 @@
+[submodule "plugins/caddy-dns-cloudflare"]
+	path = plugins/caddy-dns-cloudflare
+	url = https://github.com/caddy-dns/cloudflare.git
+[submodule "plugins/caddy-dynamicdns"]
+	path = plugins/caddy-dynamicdns
+	url = https://github.com/mholt/caddy-dynamicdns.git
+[submodule "plugins/caddy-crowdsec-bouncer"]
+	path = plugins/caddy-crowdsec-bouncer
+	url = https://github.com/hslatman/caddy-crowdsec-bouncer.git
+[submodule "plugins/caddy-maxmind-geolocation"]
+	path = plugins/caddy-maxmind-geolocation
+	url = https://github.com/porech/caddy-maxmind-geolocation.git

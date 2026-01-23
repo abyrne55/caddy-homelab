@@ -34,7 +34,7 @@ podman run -d \
 
 Built using [project-hummingbird](https://quay.io/organization/hummingbird) distroless base images:
 
-- **Builder**: `quay.io/hummingbird/xcaddy` - xcaddy build environment
+- **Builder**: `quay.io/hummingbird/xcaddy` - xcaddy build environment (uses vendored plugins)
 - **Runtime**: `quay.io/hummingbird/core-runtime` - minimal distroless runtime
 
 Container runs as non-root user (UID 65532).
@@ -42,6 +42,13 @@ Container runs as non-root user (UID 65532).
 ## Building Locally
 
 ```bash
+# Clone with submodules
+git clone --recursive https://github.com/abyrne55/caddy-homelab.git
+
+# Or if already cloned, initialize submodules
+git submodule update --init --recursive
+
+# Build
 podman build -t caddy-homelab:latest -f Containerfile .
 ```
 
