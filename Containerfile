@@ -18,6 +18,6 @@ RUN xcaddy build \
     --with github.com/hslatman/caddy-crowdsec-bouncer=/caddy/plugins/caddy-crowdsec-bouncer \
     --with github.com/porech/caddy-maxmind-geolocation=/caddy/plugins/caddy-maxmind-geolocation
 
-FROM quay.io/hummingbird/caddy:2
+FROM quay.io/hummingbird/curl:8
 
 COPY --from=builder /caddy/caddy /usr/bin/caddy

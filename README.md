@@ -35,7 +35,7 @@ podman run -d \
 Built using [project-hummingbird](https://quay.io/organization/hummingbird) distroless base images:
 
 - **Builder**: `quay.io/hummingbird/xcaddy` - xcaddy build environment (uses vendored plugins)
-- **Runtime**: `quay.io/hummingbird/core-runtime` - minimal distroless runtime
+- **Runtime**: `quay.io/hummingbird/curl:8` - minimal distroless runtime with curl for healthchecks
 
 Container runs as non-root user (UID 65532).
 
@@ -54,4 +54,4 @@ podman build -t caddy-homelab:latest -f Containerfile .
 
 ## CI/CD
 
-On push to `main`, GitHub Actions builds arm64 images and pushes to GHCR.
+On push to `main`, GitHub Actions builds arm64 images, pushes to GHCR, and signs them with Cosign via Sigstore.
