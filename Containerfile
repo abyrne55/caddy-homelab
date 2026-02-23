@@ -21,3 +21,5 @@ RUN xcaddy build \
 FROM quay.io/hummingbird/curl:8
 
 COPY --from=builder /caddy/caddy /usr/bin/caddy
+
+ENTRYPOINT ["/usr/bin/caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
