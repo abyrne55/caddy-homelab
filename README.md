@@ -37,7 +37,6 @@ Built using [project-hummingbird](https://quay.io/organization/hummingbird) dist
 - **Builder**: `quay.io/hummingbird/xcaddy` - xcaddy build environment (uses vendored plugins)
 - **Runtime**: `quay.io/hummingbird/curl:8` - minimal distroless runtime with curl for healthchecks
 
-Container runs as non-root user (UID 65532).
 
 ## Building Locally
 
