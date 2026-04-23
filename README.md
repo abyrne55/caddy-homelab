@@ -53,4 +53,4 @@ podman build -t caddy-homelab:latest -f Containerfile .
 
 ## CI/CD
 
-On push to `main`, GitHub Actions builds arm64 images, pushes to GHCR, and signs them with Cosign via Sigstore.
+On push to `main`, GitHub Actions builds multi-arch (amd64 + arm64) images, pushes to GHCR, and signs them with Cosign via Sigstore.
