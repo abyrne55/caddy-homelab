@@ -10,3 +10,6 @@
 [submodule "plugins/caddy-maxmind-geolocation"]
 	path = plugins/caddy-maxmind-geolocation
 	url = https://github.com/porech/caddy-maxmind-geolocation.git
+[submodule "plugins/caddy-cloudflare-ip"]
+	path = plugins/caddy-cloudflare-ip
+	url = https://github.com/WeidiDeng/caddy-cloudflare-ip.git

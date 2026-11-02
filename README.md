@@ -10,6 +10,7 @@ Custom Caddy container image with plugins for homelab reverse proxy.
 | [mholt/caddy-dynamicdns](https://github.com/mholt/caddy-dynamicdns) | Dynamic DNS updates |
 | [hslatman/caddy-crowdsec-bouncer](https://github.com/hslatman/caddy-crowdsec-bouncer) | Crowdsec threat detection integration |
 | [porech/caddy-maxmind-geolocation](https://github.com/porech/caddy-maxmind-geolocation) | Geofencing via MaxMind GeoIP |
+| [WeidiDeng/caddy-cloudflare-ip](https://github.com/WeidiDeng/caddy-cloudflare-ip) | `trusted_proxies cloudflare` source (auto-refreshed Cloudflare IP ranges) |
 
 ## Usage
 
