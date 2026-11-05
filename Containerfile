@@ -11,6 +11,7 @@ COPY plugins/caddy-dynamicdns /caddy/plugins/caddy-dynamicdns
 COPY plugins/caddy-crowdsec-bouncer /caddy/plugins/caddy-crowdsec-bouncer
 COPY plugins/caddy-maxmind-geolocation /caddy/plugins/caddy-maxmind-geolocation
 COPY plugins/caddy-cloudflare-ip /caddy/plugins/caddy-cloudflare-ip
+COPY plugins/replace-response /caddy/plugins/replace-response
 
 # Build with xcaddy using local module paths
 WORKDIR /caddy
@@ -19,7 +20,8 @@ RUN GOARCH=$TARGETARCH xcaddy build \
     --with github.com/mholt/caddy-dynamicdns=/caddy/plugins/caddy-dynamicdns \
     --with github.com/hslatman/caddy-crowdsec-bouncer=/caddy/plugins/caddy-crowdsec-bouncer \
     --with github.com/porech/caddy-maxmind-geolocation=/caddy/plugins/caddy-maxmind-geolocation \
-    --with github.com/WeidiDeng/caddy-cloudflare-ip=/caddy/plugins/caddy-cloudflare-ip
+    --with github.com/WeidiDeng/caddy-cloudflare-ip=/caddy/plugins/caddy-cloudflare-ip \
+    --with github.com/caddyserver/replace-response=/caddy/plugins/replace-response
 
 FROM quay.io/hummingbird/curl:8
 
